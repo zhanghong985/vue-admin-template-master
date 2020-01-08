@@ -54,8 +54,6 @@ export const constantRoutes = [
       meta: { title: 'Dashboard', icon: 'dashboard' }
     }]
   },
-
-
   {
     path: '/customer',
     component: Layout,
@@ -63,48 +61,57 @@ export const constantRoutes = [
       {
         path: 'list',
         name: 'CustomerList',
-        component: () => import('@/pages/customer/List'),//函数方法简写 src=@
+        component: () => import('@/pages/customer/List'),
         meta: { title: '顾客管理', icon: 'user' }
       }
     ]
-  },
-  {
+  },{
     path: '/employee',
     component: Layout,
     children: [
       {
         path: 'list',
         name: 'EmployeeList',
-        component: () => import('@/pages/employee/List'),//函数方法简写 src=@
+        component: () => import('@/pages/employee/List'),
         meta: { title: '员工管理', icon: 'tree' }
       }
     ]
-  },
-  {
+  },{
     path: '/product',
     component: Layout,
     children: [
       {
         path: 'list',
         name: 'ProductList',
-        component: () => import('@/pages/system/product/List'),//函数方法简写 src=@
-        meta: { title: '产品管理', icon: 'tree' }
+        component: () => import('@/pages/system/product/List'),
+        meta: { title: '产品管理', icon: 'user' }
       }
     ]
   },
   {
-    path: '/column',
+    path: '/category',
     component: Layout,
     children: [
       {
         path: 'list',
-        name: 'ColumnList',
-        component: () => import('@/pages/system/category/List'),//函数方法简写 src=@
+        name: 'CategoryList',
+        component: () => import('@/pages/system/category/List'),
         meta: { title: '栏目管理', icon: 'user' }
       }
     ]
   },
-  
+  {
+    path: '/order',
+    component: Layout,
+    children: [
+      {
+        path: 'list',
+        name: 'OrderList',
+        component: () => import('@/pages/order/List'),
+        meta: { title: '订单管理', icon: 'user' }
+      }
+    ]
+  },
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
 ]
